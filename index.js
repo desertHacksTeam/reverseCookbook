@@ -52,7 +52,7 @@ var handlers = {
 		xmlhttp.send();
 
 		//print results
-		this.emit(':tell', 'ALEXA IS A BITCH');
+		this.emit(':tell', 'recipe data is ' + recipeData);
     },
 
 	//standard intents
