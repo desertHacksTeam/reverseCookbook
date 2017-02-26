@@ -35,6 +35,7 @@ var handlers = {
 		var xmlhttp = new XMLHttpRequest();
 		var url = "myTutorials.txt";
 
+		//request the list of recipes from the API
 		xmlhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
 		    var myArr = JSON.parse(this.responseText);
@@ -44,8 +45,8 @@ var handlers = {
 
 		xmlhttp.open("GET", url, true);
 		xmlhttp.send();
-		
-		this.emit(':tell', 'Fuck you');
+
+		this.emit(':tell', 'Fuck you Justin');
     },
 
 	//standard intents
