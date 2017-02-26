@@ -25,6 +25,7 @@ var handlers = {
 
 	//called when user lists ingredients in question
 	'DecideRecipe': function () {
+		//get the ingredient data
 		var ingredientStr = this.event.request.intent.slots.Ingredients.value;
 		var ingredientList = ingredientStr.split("and");
 		//reset the ingredient list into a string with space delimiters
@@ -37,7 +38,8 @@ var handlers = {
 		var key = keyInfoList[1];
 		var maxReturn = 3;
 		
-		/*var xmlhttp = new XMLHttpRequest();
+		//perform the xhtttp requests
+		var xmlhttp = new XMLHttpRequest();
 		var url = "https://api.edamam.com/search?q=" + searchQuery + "&app_id=" + id + "&app_key=" + key + "&from=0&to=" + maxReturn;
 
 		//request the list of recipes from the API
@@ -49,8 +51,9 @@ var handlers = {
 		};
 
 		xmlhttp.open("GET", url, true);
-		xmlhttp.send();*/
+		xmlhttp.send();
 		
+		//print results
 		this.emit(':tell', 'I HATE ALEXA SO MUCH');
     },
 
