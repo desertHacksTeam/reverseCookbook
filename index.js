@@ -14,39 +14,36 @@ var handlers = {
 	'LaunchRequest': function () {
         this.emit('DecideIngredients');
     },
-	
+
 	//called when user does not include ingredinets themselves
     'DecideIngredients': function () {
 		this.emit(':ask', 'What ingredients do you have?', 'Im sorry. What was that?');
     },
-	
+
 	//called when user lists ingredients in question
 	'DecideRecipe': function () {
-		var ingredientString = this.event.request.intent.slots.Ingredients.value;
-		var ingredientList = ingredientString.split('and');
-		
-		this.emit(':talk', 'You have ' + ingredientList.length + ' things on your list.');
+		this.emit(':tell', 'Okay:' + this.event.request.intent.slots.Ingredients.value + 'Do you have another ingredient?');
     },
-	
+
 	//standard intents
 	'AMAZON.HelpIntent': function () {
 	    this.attributes['speechOutput'] = this.t("HELP_MESSAGE");
 	    this.attributes['repromptSpeech'] = this.t("HELP_REPROMT");
 	    this.emit(':ask', this.attributes['speechOutput'], this.attributes['repromptSpeech'])
 	},
-	
+
 	'AMAZON.RepeatIntent': function () {
 	    this.emit(':ask', this.attributes['speechOutput'], this.attributes['repromptSpeech'])
 	},
-	
+
 	'AMAZON.StopIntent': function () {
 	    this.emit('SessionEndedRequest');
 	},
-	
+
 	'AMAZON.CancelIntent': function () {
 	    this.emit('SessionEndedRequest');
 	},
-	
+
 	'SessionEndedRequest': function () {
 	   this.emit(':tell', this.t("STOP_MESSAGE"));
 	}
