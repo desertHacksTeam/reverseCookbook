@@ -12,11 +12,10 @@ exports.handler = function(event, context, callback){
 var handlers = {
 	//instant called on launch
 	'LaunchRequest': function () {
-		this.emit(':tell', 'Tyman, Ive made a LOT of new commits in the git hub');
-	}
+        this.emit('DecideRecipe');
+    },
 	
     'DecideRecipe': function () {
-		//this.emit(':ask', 'Tell me something about yourself', 'Come again, senior?');
-        this.emit(':tell', 'You know, I dont really care');
+        this.emit(':tell', 'Guys, I have made a LOT of new commits in the git hub. This works, I am so happy right now!');
     }
 };
