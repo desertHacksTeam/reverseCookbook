@@ -8,18 +8,21 @@ exports.handler = function(event, context, callback){
 	alexa.execute();
 };
 
+//states
+var state = {
+    ASKMODE: '_ASKMODE',
+    ANSWERMODE: '_ANSWERMODE'
+};
+
 //handles the intents
 var handlers = {
 	//instant called on launch
 	'LaunchRequest': function () {
-        this.emit('DecideRecipe');
+        this.emit('AMAZON.YesIntent');
     },
 	
+	//prompt the user for input
     'DecideRecipe': function () {
-		var speechOutput = 'Tell me about yourself';
-		var repromptSpeech = 'Excuse me?';
-
-		this.emit(':ask', speechOutput, repromptSpeech);
-		this.emit(':tell', 'Sorry. I really could not care less.');
-    }
+		this.emit(':tell', 'it will only open when i say open');
+    },
 };

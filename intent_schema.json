@@ -2,6 +2,9 @@
 	"intent" : [
 		{
 			"intent":"DecideRecipe"
+		},
+		{
+			"intent":"Respond"
 		}
 	]
 }
