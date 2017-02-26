@@ -37,24 +37,21 @@ var handlers = {
 		var maxReturn = 3;
 
 		//perform the xhtttp requests
-<<<<<<< HEAD
-		//var xmlhttp = new XMLHttpRequest();
-=======
+
 		var xmlhttp = new XMLHttpRequest();
 >>>>>>> refs/remotes/origin/master
 		var url = "https://api.edamam.com/search?q=" + ingredientList + "&app_id=" + id + "&app_key=" + key + "&from=0&to=" + maxReturn;
-		
-		/*
-		//request the list of recipes from the API
-		//var recipeData = null;
-		//xmlhttp.onreadystatechange = function() {
-		//if (this.readyState == 4 && this.status == 200) {
-			//	recipeData = JSON.parse(this.responseText);
-		    //}
-		//};
 
-		//xmlhttp.open("GET", url, true);
-		//xmlhttp.send();*/
+
+		request the list of recipes from the API
+		xmlhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+				var recipeData = JSON.parse(this.responseText);
+		    }
+		};
+
+		xmlhttp.open("GET", url, true);
+		xmlhttp.send();
 
 		//print results
 		this.emit(':tell', 'ALEXA IS A BITCH');
