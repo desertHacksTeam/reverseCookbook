@@ -34,7 +34,7 @@ var handlers = {
 		var maxReturn = 3;
 
 		var xmlhttp = new XMLHttpRequest();
-		var url = "https://api.edamam.com/search?q=chicken&app_id=" + id + "&app_key=" + key + "&from=0&to=" + maxReturn;
+		var url = "https://api.edamam.com/search?q=" + ingredientList + "&app_id=" + id + "&app_key=" + key + "&from=0&to=" + maxReturn;
 
 		//request the list of recipes from the API
 		var recipeData = null;
