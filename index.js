@@ -27,6 +27,7 @@ var handlers = {
 	'DecideRecipe': function () {
 		var ingredientStr = this.event.request.intent.slots.Ingredients.value;
 		var ingredientList = ingredientStr.split("and");
+		//reset the ingredie
 		//read the api key/id file
 		var keyInfoList = fs.readFileSync("key.txt", 'utf8').split("/");
 		var id = keyInfoList[0];
