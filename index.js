@@ -43,14 +43,18 @@ var handlers = {
 
 		//request the list of recipes from the API
 		var recipeData;
-		xmlhttp.onreadystatechange = function() {
+		/*xmlhttp.onreadystatechange = function() {
 			if (xmlhttp.readyState == XMLHttpRequest.DONE) {
 				recipeData = xmlhttp.responseText;
 		    }
 		};
 		
 		xmlhttp.open("GET", url, true);
-		xmlhttp.send();
+		xmlhttp.send();*/
+		
+		$.getJSON(url, function(responseText) {
+		    recipeData = responseText;
+		});
 
 		//print results
 		this.emit(':tell', 'Alexa says ' + recipeData);
