@@ -42,7 +42,7 @@ var handlers = {
 				var realIngred = recipes[i].ingredients[j];
 				
 				for (var k = 0; k < ingredientList.length; ++k) {
-					if (realIngred.contains(ingredientList[k]))
+					if (ingredientList[k] == realIngred)
 						++scores[i];
 				}
 			}
