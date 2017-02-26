@@ -31,13 +31,35 @@ var handlers = {
 		
 		//load the json file through file sync
 		var recipeList = JSON.parse(fs.readFileSync("recipes.json", 'utf8'));
-		var suggestedRecipe;
+		var recipes = recipeList.recipes;
 		
-		for (var i = 0; i < recipeList.length; ++i) {
-			var recipe = recipeList[i];
-			if (i == 1)
-				suggestedRecipe = recipe["name"];
+		var suggestedRecipe;
+		var points = 0;
+		var scores = [];
+		for (var i = 0; i < recipes.length; ++i) {
+			for (var j = 0; j < recipes[i].ingredients.length; ++j) {
+				var realIngred = recipes[i].ingredients[j];
+				
+				for (var k = 0; k < ingredientList.length; ++k) {
+					if (ingredientList[k] == realIngred)
+						++points;
+				}
+			}
+			
+			scores[i] = points;
+			points = 0;
 		}
+		
+		var bestRecipe = -1;
+		var maxscore = -1;
+		for (var i = 0; i < scores; ++i) {
+			if (scores[i] > maxscore) {
+				maxscore = scores[i];
+				bestRecipe = i;
+			}
+		}
+		
+		suggestedRecipe = recipes[bestRecipe].name;
 
 		//print results
 		this.emit(':tell', 'Hmmm...with the ingredients you have, I would suggest ' + suggestedRecipe);
