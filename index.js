@@ -16,12 +16,6 @@ var handlers = {
     },
 	
     'DecideRecipe': function () {
-        this.emit(':tell', 'five');
-
-		var speechOutput = 'Tell me about yourself';
-		var repromptSpeech = 'Excuse me?';
-
-		this.emit(':ask', speechOutput, repromptSpeech);
 		this.emit(':tell', 'Sorry. I really could not care less.');
     },
 	
@@ -43,22 +37,22 @@ var handlers = {
 	    this.emit('SessionEndedRequest');
 	},
 	
-	'SessionEndedRequest':function () {
-	    this.emit(':tell', this.t("STOP_MESSAGE"));
+	'SessionEndedRequest': function () {
+	   this.emit(':tell', this.t("STOP_MESSAGE"));
 	}
-	
-	var languageStrings = {
-		    "en-US": {
-		        "translation": {
-		            "RECIPES": recipes.RECIPE_EN_US,
-		            "SKILL_NAME": "Koobkooc",
-		            "WELCOME_MESSAGE": "Welcome to %s. List your ingredients.",
-		            "WELCOME_REPROMT": "List your ingredients, or say help.",
-		            "DISPLAY_CARD_TITLE": "%s  - Recipe using %s.",
-		            "HELP_MESSAGE": "List your ingredients, and I can help you find recipes using those ingredients, or say exit. List your ingredients.",
-		            "HELP_REPROMT": "I can find recipes using the ingredients you tell me. List your ingredients",
-		            "STOP_MESSAGE": "Goodbye!"
-		        }
+};
+
+var languageStrings = {
+	"en-US": {
+		"translation": {
+			//"RECIPES": recipes.RECIPE_EN_US,
+			"SKILL_NAME": "Koobkooc",
+			"WELCOME_MESSAGE": "Welcome to %s. List your ingredients.",
+			"WELCOME_REPROMT": "List your ingredients, or say help.",
+			"DISPLAY_CARD_TITLE": "%s  - Recipe using %s.",
+			"HELP_MESSAGE": "List your ingredients, and I can help you find recipes using those ingredients, or say exit. List your ingredients.",
+			"HELP_REPROMT": "I can find recipes using the ingredients you tell me. List your ingredients",
+			"STOP_MESSAGE": "Goodbye!"
 		}
 	}
 };
