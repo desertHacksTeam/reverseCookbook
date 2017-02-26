@@ -22,7 +22,9 @@ var handlers = {
 
 	//called when user lists ingredients in question
 	'DecideRecipe': function () {
-		this.emit(':tell', 'Okay:' + this.event.request.intent.slots.Ingredients.value + 'Do you have another ingredient?');
+		var ingredientStr = this.event.request.intent.slots.Ingredients.value;
+		var ingredientList = ingredientStr.split('a');
+		this.emit(':tell', 'You have ' + ingredientList.length + ' As in your list');
     },
 
 	//standard intents
