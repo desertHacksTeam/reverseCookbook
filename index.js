@@ -15,14 +15,14 @@ var handlers = {
         this.emit('DecideIngredients');
     },
 	
-	//prompts user for ingredients
+	//called when user does not include ingredinets themselves
     'DecideIngredients': function () {
 		this.emit(':ask', 'What ingredients do you have?', 'Im sorry. What was that?');
     },
 	
-	//respond to the user with the most relevant recipe
+	//called when user lists ingredients in question
 	'DecideRecipe': function () {
-		this.emit(':tell', 'If you want to order that, you have to rent a room and die.');
+		this.emit(':tell', 'Im Alexa. Im dumber than a bag of nails. Im too stupid to do very simple tasks, but im going to try. The ingredient you literally just told me is ' + this.event.request.intent.slots.Ingredients.value + '. i hope that my dumb computer brain has the mental capacity to repreat what you say 3 seconds after you say it.');
     },
 	
 	//standard intents
