@@ -25,7 +25,7 @@ var handlers = {
 		var ingredientStr = this.event.request.intent.slots.Ingredients.value;
 		var ingredientList = ingredientStr.split("and");
 		this.emit(':tell', 'You have ' + ingredientList.length + ' items in your list');
-    this.emit(':tell', 'your items are:' + ingredientList);
+	this.emit(':tell', 'your items are:' + ingredientList);
     },
 
 	//standard intents
