@@ -2,6 +2,8 @@
 var fs = require('fs');
 //import xml http request
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+//import jquery
+var $ = require('jquery');
 
 //Alexa object courtesy of the new alexa sdk
 var Alexa = require('alexa-sdk');
