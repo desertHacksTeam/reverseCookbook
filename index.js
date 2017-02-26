@@ -16,8 +16,12 @@ var handlers = {
     },
 	
     'DecideRecipe': function () {
-		this.emit(':tell', 'Sorry. I really could not care less.');
+		this.emit(':ask', 'Tell me about yourself.');
     },
+	
+	'Respond': function () {
+		this.emit(':tell', 'Sorry. I really could not care less.');
+	},
 	
 	'AMAZON.HelpIntent': function () {
 	    this.attributes['speechOutput'] = this.t("HELP_MESSAGE");
