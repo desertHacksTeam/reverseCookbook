@@ -39,7 +39,6 @@ var handlers = {
 		//perform the xhtttp requests
 
 		var xmlhttp = new XMLHttpRequest();
->>>>>>> refs/remotes/origin/master
 		var url = "https://api.edamam.com/search?q=" + ingredientList + "&app_id=" + id + "&app_key=" + key + "&from=0&to=" + maxReturn;
 
 
