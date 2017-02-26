@@ -1,3 +1,6 @@
+//file input stream
+var fs = require('fs');
+
 //Alexa object courtesy of the new alexa sdk
 var Alexa = require('alexa-sdk');
 
@@ -30,18 +33,20 @@ var handlers = {
 		var url = "https://api.edamam.com/search?q=chicken&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&from=0&to=3&calories=gte%20591,%20lte%20722&health=alcohol-free"
 ;
 
-		xmlhttp.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
-		    var myArr = JSON.parse(this.responseText);
-		    }
-		};
+		//read the api key/id file
+		var keyInfoList = fs.readFileSync("key.txt", 'utf8').split("/");
+		var id = keyInfoList[0];
+		var key = keyInfoList[1];
 
-		xmlhttp.open("GET", url, true);
+		/*var xmlhttp = new XMLHttpRequest();
+		var url = "myTutorials.txt";
 		xmlhttp.send();
     */
 		var recipeList;
 		var numResults = 10;
 		this.emit(':tell', 'You here are the top ' + numResults + ' recipes that match your ingredients: ' + recipeLists);
+		xmlhttp.send();
+
     },
 
 	//standard intents
