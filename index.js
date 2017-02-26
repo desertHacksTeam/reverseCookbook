@@ -31,9 +31,9 @@ var handlers = {
 		var keyInfoList = fs.readFileSync("key.txt", 'utf8').split("/");
 		var id = keyInfoList[0];
 		var key = keyInfoList[1];
-		
+
 		var xmlhttp = new XMLHttpRequest();
-		var url = "myTutorials.txt";
+		var url = "https://api.edamam.com/search?q=chicken&app_id=" + id + "&app_key=" + key + "&from=0&to=3";
 
 		//request the list of recipes from the API
 		xmlhttp.onreadystatechange = function() {
