@@ -12,6 +12,9 @@
                 }
               ]
 		},
+		{
+			"intent":"Next"
+		},
 		
 		{"intent": "AMAZON.RepeatIntent"},
 	    {"intent": "AMAZON.HelpIntent"},

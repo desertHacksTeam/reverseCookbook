@@ -29,10 +29,23 @@ var handlers = {
 		var ingredientStr = this.event.request.intent.slots.Ingredients.value;
 		var ingredientList = ingredientStr.split("and");
 		
+		//load the json file through file sync
+		var recipeList = JSON.parse(fs.readFileSync("recipes.json", 'utf8'));
+		var suggestedRecipe;
 		
+		for (var i = 0; i < recipeList.length; ++i) {
+			var recipe = recipeList[i];
+			if (i == 1)
+				suggestedRecipe = recipe["name"];
+		}
 
 		//print results
-		this.emit(':tell', 'Alexa says ' + recipeData);
+		this.emit(':tell', 'Hmmm...with the ingredients you have, I would suggest ' + suggestedRecipe);
+    },
+	
+	//read a new recipe from the top list
+	'Next': function () {
+        this.emit(':tell', 'The next instant was called. cool');
     },
 
 	//standard intents
