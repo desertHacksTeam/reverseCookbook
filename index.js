@@ -43,9 +43,10 @@ var handlers = {
 
 
 		//request the list of recipes from the API
+		var recipeData = 5;
 		xmlhttp.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
-				var recipeData = JSON.parse(this.responseText);
+			if (this.readyState == 1 && this.status == 0) {
+				recipeData = this.responseText;
 		    }
 		};
 
@@ -53,7 +54,7 @@ var handlers = {
 		xmlhttp.send();
 
 		//print results
-		this.emit(':tell', 'recipe data is ' + recipeData);
+		this.emit(':tell', 'Alexa says ' + recipeData);
     },
 
 	//standard intents
