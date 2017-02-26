@@ -24,7 +24,8 @@ var handlers = {
 	'DecideRecipe': function () {
 		var ingredientStr = this.event.request.intent.slots.Ingredients.value;
 		var ingredientList = ingredientStr.split("and");
-		this.emit(':tell', 'You have ' + ingredientList.length + ' items in your list');
+		for (var i = 0; i < ingredientList.length; ++i)
+			this.emit(':tell', 'You like ' + ingredientList[i] + 's');
     },
 
 	//standard intents
