@@ -1,5 +1,7 @@
 //file input stream
 var fs = require('fs');
+//import xml http request
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
 //Alexa object courtesy of the new alexa sdk
 var Alexa = require('alexa-sdk');
@@ -35,9 +37,14 @@ var handlers = {
 		var maxReturn = 3;
 
 		//perform the xhtttp requests
+<<<<<<< HEAD
 		//var xmlhttp = new XMLHttpRequest();
+=======
+		var xmlhttp = new XMLHttpRequest();
+>>>>>>> refs/remotes/origin/master
 		var url = "https://api.edamam.com/search?q=" + ingredientList + "&app_id=" + id + "&app_key=" + key + "&from=0&to=" + maxReturn;
-
+		
+		/*
 		//request the list of recipes from the API
 		//var recipeData = null;
 		//xmlhttp.onreadystatechange = function() {
