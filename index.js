@@ -41,23 +41,21 @@ var handlers = {
 		var xmlhttp = new XMLHttpRequest();
 		var url = "https://api.edamam.com/search?q=" + ingredientList + "&app_id=" + id + "&app_key=" + key + "&from=0&to=" + maxReturn;
 
+    xmlhttp.open("GET", url, true);
+		xmlhttp.send();
+
 		//request the list of recipes from the API
-		var recipeData;
-		/*xmlhttp.onreadystatechange = function() {
-			if (xmlhttp.readyState == XMLHttpRequest.DONE) {
-				recipeData = xmlhttp.responseText;
+		xmlhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+				var recipeData = JSON.parse(this.responseText);
 		    }
 		};
-		
+
 		xmlhttp.open("GET", url, true);
-		xmlhttp.send();*/
-		
-		$.getJSON(url, function(responseText) {
-		    recipeData = responseText;
-		});
+		xmlhttp.send();
 
 		//print results
-		this.emit(':tell', 'Alexa says ' + recipeData);
+		this.emit(':tell', 'ALEXA IS A BITCH');
     },
 
 	//standard intents
