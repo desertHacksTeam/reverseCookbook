@@ -45,8 +45,11 @@ var handlers = {
 
 		xmlhttp.open("GET", url, true);
 		xmlhttp.send();
-
+		
+		this.emit(':tell', 'Fuck you');
+		xmlhttp.send();
 		this.emit(':tell', 'Fuck you Justin');
+
     },
 
 	//standard intents
