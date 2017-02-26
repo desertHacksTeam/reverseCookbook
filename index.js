@@ -33,25 +33,23 @@ var handlers = {
 		var recipeList = JSON.parse(fs.readFileSync("recipes.json", 'utf8'));
 		var recipes = recipeList.recipes;
 		
-		var suggestedRecipe;
+		var suggestedRecipe = null;
 		var points = 0;
 		var scores = [];
 		for (var i = 0; i < recipes.length; ++i) {
+			scores[i] = 0;
 			for (var j = 0; j < recipes[i].ingredients.length; ++j) {
 				var realIngred = recipes[i].ingredients[j];
 				
 				for (var k = 0; k < ingredientList.length; ++k) {
-					if (ingredientList[k] == realIngred)
-						++points;
+					if (realIngred.contains(ingredientList[k]))
+						++scores[i];
 				}
 			}
-			
-			scores[i] = points;
-			points = 0;
 		}
 		
-		var bestRecipe = -1;
-		var maxscore = -1;
+		var bestRecipe = 0;
+		var maxscore = 0;
 		for (var i = 0; i < scores; ++i) {
 			if (scores[i] > maxscore) {
 				maxscore = scores[i];
