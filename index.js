@@ -31,24 +31,24 @@ var handlers = {
 		var keyInfoList = fs.readFileSync("key.txt", 'utf8').split("/");
 		var id = keyInfoList[0];
 		var key = keyInfoList[1];
+		var maxReturn = 3;
 
 		var xmlhttp = new XMLHttpRequest();
-		var url = "https://api.edamam.com/search?q=chicken&app_id=" + id + "&app_key=" + key + "&from=0&to=3";
+		var url = "https://api.edamam.com/search?q=chicken&app_id=" + id + "&app_key=" + key + "&from=0&to=" + maxReturn;
 
 		//request the list of recipes from the API
+		var recipeData = null;
 		xmlhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-		    var myArr = JSON.parse(this.responseText);
-		    myFunction(myArr);
+		    recipeData = JSON.parse(this.responseText);
 		    }
 		};
 
 		xmlhttp.open("GET", url, true);
 		xmlhttp.send();
 		
-		this.emit(':tell', 'Fuck you');
 		xmlhttp.send();
-		this.emit(':tell', 'Fuck you Justin');
+		this.emit(':tell', 'Fuck you Justin, but thank you. ' + recipeData);
 
     },
 
