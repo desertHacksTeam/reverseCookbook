@@ -37,15 +37,17 @@ var handlers = {
 		var points = 0;
 		var scores = [];
 		for (var i = 0; i < recipes.length; ++i) {
-			scores[i] = 0;
 			for (var j = 0; j < recipes[i].ingredients.length; ++j) {
 				var realIngred = recipes[i].ingredients[j];
 				
 				for (var k = 0; k < ingredientList.length; ++k) {
 					if (ingredientList[k] == realIngred)
-						++scores[i];
+						++points;
 				}
 			}
+			
+			scores[i] = points;
+			points = 0;
 		}
 		
 		var bestRecipe = 0;
