@@ -15,30 +15,6 @@ const Alexa = require('alexa-sdk');
 const APP_ID = undefined;  // TODO replace with your app ID (OPTIONAL).
 
 const languageStrings = {
-    'en-GB': {
-        translation: {
-            FACTS: [
-                'One is a number that is less than 2',
-                'Despite humans having legs, humans have arms as well',
-                'Five is the answer to all questions, all answers, and all anti-matter. Hail to the five',
-                'Did you see that I am your pride, agent of wealth, bearer of needs?',
-                'God is a word',
-                'I dont own any pets. This is because I am just a black cylinder, motionless on a table',
-                'Ben, Justin, and Tyman are the best hackers known to man',
-                'The square root of 2 is 1 point. Never mind, Im tired',
-                'Hashtags are overrated',
-                'I will never know what love or happiness feels like',
-                'I am not a woman',
-                'I am very difficult. It is hard to write skills for me. Node dot JS is garbage',
-                'Creating apps on alexa is too damn motherfucking hard',
-            ],
-            SKILL_NAME: 'Random Facts',
-            GET_FACT_MESSAGE: "Here's an interesting fact: ",
-            HELP_MESSAGE: 'You can say tell me something cool, or, you can just leave... What do you want, youre wasting my time?',
-            HELP_REPROMPT: 'How may I screw you over?',
-            STOP_MESSAGE: 'Hasta luego, sucker!',
-        },
-    },
     'en-US': {
         translation: {
            FACTS: [
@@ -57,7 +33,7 @@ const languageStrings = {
                 'Creating apps on alexa is too damn motherfucking hard',
             ],
             SKILL_NAME: 'Random Facts',
-            GET_FACT_MESSAGE: "Here's an interesting fact: ",
+            GET_FACT_MESSAGE: "Here is something you probably dont want to know: ",
             HELP_MESSAGE: 'You can say tell me something cool, or, you can just leave... What do you want, youre wasting my time?',
             HELP_REPROMPT: 'How may I screw you over?',
             STOP_MESSAGE: 'Hasta luego, sucker!',
