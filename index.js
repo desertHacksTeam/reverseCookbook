@@ -41,15 +41,14 @@ var handlers = {
 		var xmlhttp = new XMLHttpRequest();
 		var url = "https://api.edamam.com/search?q=" + ingredientList + "&app_id=" + id + "&app_key=" + key + "&from=0&to=" + maxReturn;
 
-
 		//request the list of recipes from the API
 		var recipeData;
 		xmlhttp.onreadystatechange = function() {
-			if (this.readyState == 4 && this.status == 200) {
-				recipeData = this.responseText;
+			if (xmlhttp.readyState == XMLHttpRequest.DONE) {
+				recipeData = xmlhttp.responseText;
 		    }
 		};
-
+		
 		xmlhttp.open("GET", url, true);
 		xmlhttp.send();
 
