@@ -11,8 +11,7 @@ exports.handler = function(event, context, callback){
 //handles the intents
 var handlers = {
     'DecideRecipe': function () {
-		
-		this.emit(':ask', 'Tell me something about yourself', 'Come again, senior?');
+		//this.emit(':ask', 'Tell me something about yourself', 'Come again, senior?');
         this.emit(':tell', 'You know, I dont really care');
     }
 };
