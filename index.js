@@ -16,6 +16,10 @@ var handlers = {
     },
 	
     'DecideRecipe': function () {
-        this.emit(':tell', 'Guys, I have made a LOT of new commits in the git hub. This works, I am so happy right now!');
+		var speechOutput = 'Tell me about yourself';
+		var repromptSpeech = 'Excuse me?';
+
+		this.emit(':ask', speechOutput, repromptSpeech);
+		this.emit(':tell', 'Sorry. I really could not care less.');
     }
 };
