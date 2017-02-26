@@ -1,0 +1,6 @@
+DecideRecipe what can i cook
+DecideRecipe what should i cook
+DecideRecipe what am i able to cook
+DecideRecipe what food can i make
+DecideRecipe what can i make with these ingredients
+DecideRecipe find recipe
