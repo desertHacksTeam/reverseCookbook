@@ -1,0 +1,30 @@
+{
+	"recipes":[
+		{
+			"name":"Chicken Parmesan", 
+			"picture":"http://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/19/13/5/3uLMBJZgQWaAJWGCAnwg_chicken-parmesan-6.jpg",
+			"ingredients":["chicken", "eggs", "flour", "oil", "tomato sauce", "cheese", "spices"]
+		},
+		
+		{
+			"name":"Corned Beef", 
+			"picture":"http://assets.simplyrecipes.com/wp-content/uploads/2011/03/home-cured-corned-beef.jpg",
+			"ingredients":["beef", "potatoes", "carrots", "cabbage"]
+		},
+		{
+			"name":"Pork Tenderloin", 
+			"picture":"http://food.fnr.sndimg.com/content/dam/images/food/fullset/2003/10/16/4/tm1b27_pork_tenderloins3.jpg.rend.hgtvcom.616.462.jpeg",
+			"ingredients":["pork", "garlic", "oil", "salt", "spices"]
+		},
+		{
+			"name":"Chicken Alfredo", 
+			"picture":"http://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/47/18/14/BHHGjix4Q8Q5U9BZ1sIg_chicken-alfredo-3.jpg",
+			"ingredients":["pasta", "cream cheese", "butter", "milk", "chicken", "vegetables"]
+		},
+		{
+			"name":"Pickle in a Cup", 
+			"picture":"http://3.bp.blogspot.com/-qbBVb1G-8i8/Tkb6plakeiI/AAAAAAAAg2o/0JiQSkBBu7Q/s1600/IMG_1414.JPG",
+			"ingredients":["pickle", "cup"]
+		}
+	]
+}
