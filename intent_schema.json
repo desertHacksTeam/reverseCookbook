@@ -6,5 +6,10 @@
 		{
 			"intent":"Respond"
 		}
+		
+		{"intent": "AMAZON.RepeatIntent"},
+	    {"intent": "AMAZON.HelpIntent"},
+	    {"intent": "AMAZON.StopIntent"},
+		{"intent": "AMAZON.CancelIntent"}
 	]
 }
