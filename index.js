@@ -27,7 +27,10 @@ var handlers = {
 	'DecideRecipe': function () {
 		var ingredientStr = this.event.request.intent.slots.Ingredients.value;
 		var ingredientList = ingredientStr.split("and");
-		//reset the ingredie
+		//reset the ingredient list into a string with space delimiters
+		var searchQuery = "";
+		for (var i = 0; i < ingredientList.length; ++i)
+			searchQuery += ingredientList[i] + " ";
 		//read the api key/id file
 		var keyInfoList = fs.readFileSync("key.txt", 'utf8').split("/");
 		var id = keyInfoList[0];
@@ -35,7 +38,7 @@ var handlers = {
 		var maxReturn = 3;
 		
 		/*var xmlhttp = new XMLHttpRequest();
-		var url = "https://api.edamam.com/search?q=" + ingredientList + "&app_id=" + id + "&app_key=" + key + "&from=0&to=" + maxReturn;
+		var url = "https://api.edamam.com/search?q=" + searchQuery + "&app_id=" + id + "&app_key=" + key + "&from=0&to=" + maxReturn;
 
 		//request the list of recipes from the API
 		var recipeData = null;
@@ -48,7 +51,7 @@ var handlers = {
 		xmlhttp.open("GET", url, true);
 		xmlhttp.send();*/
 		
-		this.emit(':tellWithCard', ingredientList, 'Ingredient List Card', ingredientList, null);
+		this.emit(':tell', 'I HATE ALEXA SO MUCH');
     },
 
 	//standard intents
