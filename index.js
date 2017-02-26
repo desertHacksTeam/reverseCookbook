@@ -12,16 +12,20 @@ exports.handler = function(event, context, callback){
 var handlers = {
 	//instant called on launch
 	'LaunchRequest': function () {
-        this.emit('DecideRecipe');
+        this.emit('DecideIngredients');
     },
 	
-    'DecideRecipe': function () {
-		this.emit(':ask', 'Tell me about yourself.');
+    'DecideIngredients': function () {
+		this.emit(':ask', 'Tell me about yourself.', 'Im sorry. What was that?');
     },
 	
 	'Respond': function () {
 		this.emit(':tell', 'Sorry. I really could not care less.');
 	},
+	
+	'DecideRecipe': function () {
+		this.emit(':tell', 'You can make lots of things with that.');
+    },
 	
 	'AMAZON.HelpIntent': function () {
 	    this.attributes['speechOutput'] = this.t("HELP_MESSAGE");
@@ -49,7 +53,6 @@ var handlers = {
 var languageStrings = {
 	"en-US": {
 		"translation": {
-			//"RECIPES": recipes.RECIPE_EN_US,
 			"SKILL_NAME": "Koobkooc",
 			"WELCOME_MESSAGE": "Welcome to %s. List your ingredients.",
 			"WELCOME_REPROMT": "List your ingredients, or say help.",
