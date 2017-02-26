@@ -1,11 +1,11 @@
 {
-	"intent" : [
+	"intents" : [
 		{
 			"intent":"DecideRecipe"
 		},
 		{
 			"intent":"Respond"
-		}
+		},
 		
 		{"intent": "AMAZON.RepeatIntent"},
 	    {"intent": "AMAZON.HelpIntent"},
