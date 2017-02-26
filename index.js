@@ -37,7 +37,7 @@ var handlers = {
 		var id = keyInfoList[0];
 		var key = keyInfoList[1];
 		var maxReturn = 3;
-		
+
 		//perform the xhtttp requests
 		var xmlhttp = new XMLHttpRequest();
 		var url = "https://api.edamam.com/search?q=" + searchQuery + "&app_id=" + id + "&app_key=" + key + "&from=0&to=" + maxReturn;
@@ -52,9 +52,9 @@ var handlers = {
 
 		xmlhttp.open("GET", url, true);
 		xmlhttp.send();
-		
+
 		//print results
-		this.emit(':tell', 'I HATE ALEXA SO MUCH');
+		this.emit(':tell', url);
     },
 
 	//standard intents
