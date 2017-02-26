@@ -28,7 +28,9 @@ var handlers = {
 		var ingredientStr = this.event.request.intent.slots.Ingredients.value;
 		var ingredientList = ingredientStr.split("and");
 		//read the api key/id file
-		var testTxt = fs.readFileSync("key.txt", 'utf8');
+		var keyInfoList = fs.readFileSync("key.txt", 'utf8').split("/");
+		var id = keyInfoList[0];
+		var key = keyInfoList[1];
 		
 		/*var xmlhttp = new XMLHttpRequest();
 		var url = "myTutorials.txt";
@@ -41,9 +43,7 @@ var handlers = {
 		};
 
 		xmlhttp.open("GET", url, true);
-		xmlhttp.send();*/
-		
-		this.emit(':tell', 'your file says ' + testTxt);		
+		xmlhttp.send();*/		
     },
 
 	//standard intents
