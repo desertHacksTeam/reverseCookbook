@@ -35,14 +35,14 @@ var handlers = {
 		var maxReturn = 3;
 
 		//perform the xhtttp requests
-		//var xmlhttp = new XMLHttpRequest();
+		/*var xmlhttp = new XMLHttpRequest();
 		var url = "https://api.edamam.com/search?q=" + ingredientList + "&app_id=" + id + "&app_key=" + key + "&from=0&to=" + maxReturn;
 
 		//request the list of recipes from the API
-		/*var recipeData = null;
+		//var recipeData = null;
 		xmlhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-		    recipeData = JSON.parse(this.responseText);
+				recipeData = JSON.parse(this.responseText);
 		    }
 		};
 
