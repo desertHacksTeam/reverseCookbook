@@ -32,8 +32,8 @@ var handlers = {
 		var id = keyInfoList[0];
 		var key = keyInfoList[1];
 		var maxReturn = 3;
-
-		var xmlhttp = new XMLHttpRequest();
+		
+		/*var xmlhttp = new XMLHttpRequest();
 		var url = "https://api.edamam.com/search?q=" + ingredientList + "&app_id=" + id + "&app_key=" + key + "&from=0&to=" + maxReturn;
 
 		//request the list of recipes from the API
@@ -45,11 +45,9 @@ var handlers = {
 		};
 
 		xmlhttp.open("GET", url, true);
-		xmlhttp.send();
+		xmlhttp.send();*/
 		
-		xmlhttp.send();
-		this.emit(':tell', 'Fuck you Justin, but thank you. ' + recipeData);
-
+		this.emit(':tellWithCard', ingredientList, 'Ingredient List Card', ingredientList, null);
     },
 
 	//standard intents
