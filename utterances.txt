@@ -1,2 +1,3 @@
-DecideIngredients whats cooking sugar
+DecideIngredients what can i cook
+DecideIngredients what should i cook
 DecideRecipe {Ingredients}

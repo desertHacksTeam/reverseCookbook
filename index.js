@@ -27,7 +27,7 @@ var handlers = {
 		//request the list of recipes from the API
 		var recipeList;
 		var numResults = 10;
-		this.emit(':tell', 'You here are the top ' + numResults + ' recipes that match your ingredients: +' + recipeLists);		
+		this.emit(':tell', 'You here are the top ' + numResults + ' recipes that match your ingredients: ' + recipeLists);		
     },
 
 	//standard intents
