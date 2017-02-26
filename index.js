@@ -1,9 +1,5 @@
 //file input stream
 var fs = require('fs');
-//import xml http request
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-//import jquery
-var $ = require('jquery');
 
 //Alexa object courtesy of the new alexa sdk
 var Alexa = require('alexa-sdk');
@@ -32,30 +28,6 @@ var handlers = {
 		//get the ingredient data
 		var ingredientStr = this.event.request.intent.slots.Ingredients.value;
 		var ingredientList = ingredientStr.split("and");
-		//read the api key/id file
-		var keyInfoList = fs.readFileSync("key.txt", 'utf8').split("/");
-		var id = keyInfoList[0];
-		var key = keyInfoList[1];
-		var maxReturn = 3;
-
-		//perform the xhtttp requests
-
-		var xmlhttp = new XMLHttpRequest();
-		var url = "https://api.edamam.com/search?q=" + ingredientList + "&app_id=" + id + "&app_key=" + key + "&from=0&to=" + maxReturn;
-
-    xmlhttp.open("GET", url, true);
-		xmlhttp.send();
-
-		//request the list of recipes from the API
-		xmlhttp.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
-				var recipeData = JSON.parse(this.responseText);
-		    }
-		};
-
-		xmlhttp.open("GET", url, true);
-		xmlhttp.send();
-
 		//print results
 		this.emit(':tell', 'ALEXA IS A BITCH');
     },
