@@ -23,8 +23,8 @@ var handlers = {
 	//called when user lists ingredients in question
 	'DecideRecipe': function () {
 		var ingredientStr = this.event.request.intent.slots.Ingredients.value;
-		var ingredientList = ingredientStr.split('a');
-		this.emit(':tell', 'You have ' + ingredientList.length + ' As in your list');
+		var ingredientList = ingredientStr.split("and");
+		this.emit(':tell', 'You have ' + ingredientList.length + ' items in your list');
     },
 
 	//standard intents
