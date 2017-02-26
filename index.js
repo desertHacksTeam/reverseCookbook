@@ -27,8 +27,23 @@ var handlers = {
 	'DecideRecipe': function () {
 		var ingredientStr = this.event.request.intent.slots.Ingredients.value;
 		var ingredientList = ingredientStr.split("and");
-		//request the list of recipes from the API
-		var test = fs.readFileSync("test.txt", 'utf8');
+		//read the api key/id file
+		var testTxt = fs.readFileSync("key.txt", 'utf8');
+		
+		/*var xmlhttp = new XMLHttpRequest();
+		var url = "myTutorials.txt";
+
+		xmlhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+		    var myArr = JSON.parse(this.responseText);
+		    myFunction(myArr);
+		    }
+		};
+
+		xmlhttp.open("GET", url, true);
+		xmlhttp.send();*/
+		
+		this.emit(':tell', 'your file says ' + testTxt);		
     },
 
 	//standard intents
