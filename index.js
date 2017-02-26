@@ -32,7 +32,7 @@ var handlers = {
 		var id = keyInfoList[0];
 		var key = keyInfoList[1];
 		
-		/*var xmlhttp = new XMLHttpRequest();
+		var xmlhttp = new XMLHttpRequest();
 		var url = "myTutorials.txt";
 
 		xmlhttp.onreadystatechange = function() {
@@ -43,7 +43,8 @@ var handlers = {
 		};
 
 		xmlhttp.open("GET", url, true);
-		xmlhttp.send();*/
+		xmlhttp.send();
+		
 		this.emit(':tell', 'Fuck you');
     },
 
