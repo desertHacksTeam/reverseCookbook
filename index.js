@@ -1,3 +1,6 @@
+//file input stream
+var fs = require('fs');
+
 //Alexa object courtesy of the new alexa sdk
 var Alexa = require('alexa-sdk');
 
@@ -25,9 +28,7 @@ var handlers = {
 		var ingredientStr = this.event.request.intent.slots.Ingredients.value;
 		var ingredientList = ingredientStr.split("and");
 		//request the list of recipes from the API
-		var recipeList;
-		var numResults = 10;
-		this.emit(':tell', 'You here are the top ' + numResults + ' recipes that match your ingredients: ' + recipeLists);		
+		var test = fs.readFileSync("test.txt", 'utf8');
     },
 
 	//standard intents
