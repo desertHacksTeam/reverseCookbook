@@ -25,21 +25,23 @@ var handlers = {
 		var ingredientStr = this.event.request.intent.slots.Ingredients.value;
 		var ingredientList = ingredientStr.split("and");
 		//request the list of recipes from the API
+    /*
 		var xmlhttp = new XMLHttpRequest();
-		var url = "myTutorials.txt";
+		var url = "https://api.edamam.com/search?q=chicken&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&from=0&to=3&calories=gte%20591,%20lte%20722&health=alcohol-free"
+;
 
 		xmlhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
 		    var myArr = JSON.parse(this.responseText);
-		    myFunction(myArr);
 		    }
 		};
 
 		xmlhttp.open("GET", url, true);
 		xmlhttp.send();
+    */
 		var recipeList;
 		var numResults = 10;
-		this.emit(':tell', 'You here are the top ' + numResults + ' recipes that match your ingredients: ' + recipeLists);		
+		this.emit(':tell', 'You here are the top ' + numResults + ' recipes that match your ingredients: ' + recipeLists);
     },
 
 	//standard intents
