@@ -24,7 +24,10 @@ var handlers = {
 	'DecideRecipe': function () {
 		var ingredientStr = this.event.request.intent.slots.Ingredients.value;
 		var ingredientList = ingredientStr.split("and");
-		this.emit(':tell', 'You have ' + ingredientList.length + ' items in your list. Your items are:' + ingredientList);
+		//request the list of recipes from the API
+		var recipeList;
+		var numResults = 10;
+		this.emit(':tell', 'You here are the top ' + numResults + ' recipes that match your ingredients: ' + recipeLists);		
     },
 
 	//standard intents
