@@ -22,7 +22,10 @@ var handlers = {
 	
 	//called when user lists ingredients in question
 	'DecideRecipe': function () {
-		this.emit(':tell', 'Im Alexa. Im dumber than a bag of nails. Im too stupid to do very simple tasks, but im going to try. The ingredient you literally just told me is ' + this.event.request.intent.slots.Ingredients.value + '. i hope that my dumb computer brain has the mental capacity to repreat what you say 3 seconds after you say it.');
+		var ingredientString = this.event.request.intent.slots.Ingredients.value;
+		var ingredientList = ingredientString.split('and');
+		
+		this.emit(':talk', 'You have ' + ingredientList.length + ' things on your list.');
     },
 	
 	//standard intents
