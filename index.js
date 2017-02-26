@@ -42,7 +42,7 @@ var handlers = {
 		var url = "https://api.edamam.com/search?q=" + ingredientList + "&app_id=" + id + "&app_key=" + key + "&from=0&to=" + maxReturn;
 
 
-		request the list of recipes from the API
+		//request the list of recipes from the API
 		xmlhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
 				var recipeData = JSON.parse(this.responseText);
