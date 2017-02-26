@@ -43,9 +43,9 @@ var handlers = {
 
 
 		//request the list of recipes from the API
-		var recipeData = 5;
+		var recipeData;
 		xmlhttp.onreadystatechange = function() {
-			if (this.readyState == 1 && this.status == 0) {
+			if (this.readyState == 4 && this.status == 200) {
 				recipeData = this.responseText;
 		    }
 		};
