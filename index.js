@@ -15,8 +15,50 @@ var handlers = {
         this.emit('DecideRecipe');
     },
 	
-	//prompt the user for input
     'DecideRecipe': function () {
-		this.emit(':tell', 'Lets gather round the camp fire and sing our camp fire song. our C a m p f i r e s o n g song. and if you dont think that we can sing it faster than youre wrong. but itll help if you just sing along. bomb bomb...bomb');
+        this.emit(':tell', 'five');
+
+		var speechOutput = 'Tell me about yourself';
+		var repromptSpeech = 'Excuse me?';
+
+		this.emit(':ask', speechOutput, repromptSpeech);
+		this.emit(':tell', 'Sorry. I really could not care less.');
     },
+	
+	'AMAZON.HelpIntent': function () {
+	    this.attributes['speechOutput'] = this.t("HELP_MESSAGE");
+	    this.attributes['repromptSpeech'] = this.t("HELP_REPROMT");
+	    this.emit(':ask', this.attributes['speechOutput'], this.attributes['repromptSpeech'])
+	},
+	
+	'AMAZON.RepeatIntent': function () {
+	    this.emit(':ask', this.attributes['speechOutput'], this.attributes['repromptSpeech'])
+	},
+	
+	'AMAZON.StopIntent': function () {
+	    this.emit('SessionEndedRequest');
+	},
+	
+	'AMAZON.CancelIntent': function () {
+	    this.emit('SessionEndedRequest');
+	},
+	
+	'SessionEndedRequest':function () {
+	    this.emit(':tell', this.t("STOP_MESSAGE"));
+	}
+	
+	var languageStrings = {
+		    "en-US": {
+		        "translation": {
+		            "RECIPES": recipes.RECIPE_EN_US,
+		            "SKILL_NAME": "Koobkooc",
+		            "WELCOME_MESSAGE": "Welcome to %s. List your ingredients.",
+		            "WELCOME_REPROMT": "List your ingredients, or say help.",
+		            "DISPLAY_CARD_TITLE": "%s  - Recipe using %s.",
+		            "HELP_MESSAGE": "List your ingredients, and I can help you find recipes using those ingredients, or say exit. List your ingredients.",
+		            "HELP_REPROMT": "I can find recipes using the ingredients you tell me. List your ingredients",
+		            "STOP_MESSAGE": "Goodbye!"
+		        }
+		}
+	}
 };
