@@ -15,18 +15,17 @@ var handlers = {
         this.emit('DecideIngredients');
     },
 	
+	//prompts user for ingredients
     'DecideIngredients': function () {
-		this.emit(':ask', 'Tell me about yourself.', 'Im sorry. What was that?');
+		this.emit(':ask', 'What ingredients do you have?', 'Im sorry. What was that?');
     },
 	
-	'Respond': function () {
-		this.emit(':tell', 'Sorry. I really could not care less.');
-	},
-	
+	//respond to the user with the most relevant recipe
 	'DecideRecipe': function () {
-		this.emit(':tell', 'You can make lots of things with that.');
+		this.emit(':tell', 'If you want to order that, you have to rent a room and die.');
     },
 	
+	//standard intents
 	'AMAZON.HelpIntent': function () {
 	    this.attributes['speechOutput'] = this.t("HELP_MESSAGE");
 	    this.attributes['repromptSpeech'] = this.t("HELP_REPROMT");

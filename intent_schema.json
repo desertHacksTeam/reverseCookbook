@@ -4,13 +4,10 @@
 			"intent":"DecideIngredients"
 		},
 		{
-			"intent":"Respond"
-		},
-		{
 			"intent":"DecideRecipe",
 			"slots": [
               	{
-					"name" : "Ingredient",
+					"name" : "Ingredients",
 					"type" : "AMAZON.Food"
                 }
               ]
