@@ -27,7 +27,7 @@ var handlers = {
 	'DecideRecipe': function () {
 		//get the ingredient data
 		var ingredientStr = this.event.request.intent.slots.Ingredients.value;
-		var ingredientList = ingredientStr.split("and");
+		var ingredientList = ingredientStr.split(" ");
 		
 		//load the json file through file sync
 		var recipeList = JSON.parse(fs.readFileSync("recipes.json", 'utf8'));
@@ -52,7 +52,7 @@ var handlers = {
 		
 		var bestRecipe = 0;
 		var maxscore = 0;
-		for (var i = 0; i < scores; ++i) {
+		for (var i = 0; i < scores.length; ++i) {
 			if (scores[i] > maxscore) {
 				maxscore = scores[i];
 				bestRecipe = i;
